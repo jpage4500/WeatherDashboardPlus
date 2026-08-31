@@ -109,9 +109,10 @@ chmod +x <downloaded-file>
 <details>
 <summary><b>Android</b></summary>
 
-Download from the Play Store (coming soon)
+**[Get it on Google Play](https://play.google.com/store/apps/details?id=com.jpage4500.weather)**
 
-- Register for beta access to get the latest changes 
+- The app is in **open testing** — anyone can install it, no invite needed
+- [Join the open test](https://play.google.com/apps/testing/com.jpage4500.weather) to keep getting new versions as they're built
 
 </details>
 

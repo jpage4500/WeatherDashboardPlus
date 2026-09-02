@@ -44,6 +44,22 @@ fall back to the IP-based lookup.
 
 ---
 
+## Camera
+
+The app uses a camera for exactly one optional thing: **Wake On Motion**, part of the screensaver.
+When you turn it on, the front camera watches for movement so the dashboard wakes as you walk up to
+it instead of waiting for a tap.
+
+- It is **off by default**, and camera permission is only requested if you switch it on.
+- The camera is open **only while the screensaver is actually on screen**, and closes the moment the
+  screensaver does.
+- No photo or video is recorded, saved, or sent anywhere. The app compares the overall brightness of
+  one frame against the previous one and keeps nothing else — there is no image to leak, and nothing
+  leaves your device.
+- It's mobile only. The desktop app never touches a camera.
+
+---
+
 ## Services the app contacts
 
 The app is a client for public weather services. When it fetches data, that service necessarily
@@ -73,6 +89,7 @@ The developer does not receive a copy of any of these requests.
 - No account, sign-in, or email collection.
 - No selling or sharing of data with anyone, for any purpose.
 - No background location, and no location reported to the developer.
+- No photo or video from the camera is stored or transmitted, ever.
 
 ---
 
@@ -88,6 +105,7 @@ account system and collects no personal information from anyone.
 | To do this | Go here |
 |---|---|
 | Stop using device location | Revoke location permission in the OS, or remove "Current Location" from your list |
+| Stop the app using the camera | Settings ▸ Dashboard Mode ▸ Advanced ▸ Wake On Motion — set it to 0, or revoke camera permission in the OS |
 | Stop contacting Unsplash | Settings ▸ Background ▸ Image Source — pick the bundled photos or gradients |
 | Remove everything stored locally | Uninstall the app (desktop: delete `~/.weather-dashboard/`) |
 | Have a support report or crash log deleted | Email the address below |

@@ -16,7 +16,7 @@
 
 <br>
 
-<img src="resources/screenshot-main-landscape.png" width="900" alt="Weather Dashboard+ full-screen conditions view">
+<img src="resources/screenshots/android-land/main.png" width="900" alt="Weather Dashboard+ full-screen conditions view">
 
 </div>
 
@@ -62,6 +62,7 @@ I had some requirements and a wish list:
 | **Configurable Weather Source** | Select from Open-Meteo weather source (default - no API key needed), Visual Crossing (API key), OpenWeatherMap (API key)                                                                                                                                                             |
 | **Configurable Pollen Source**  | Select from pollen.com, Open-Meteo or Google Pollen (API key)                                                                                                                                                                                                                        |
 | **Reorder Sections**            | Re-order the various weather sections to fit your needs                                                                                                                                                                                                                              |
+| **Custom Photos**            | Use your own photos as backgrounds for the weather or as a screensaver                                                                                                                                                                                                                             |
 
 ---
 
@@ -69,10 +70,10 @@ I had some requirements and a wish list:
 
 |                                                                         |                                                                             |
 | ----------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| **Main Screen**                                                         | **Main Screen**                                                             |
-| <img src="resources/screenshot-main.png" width="256" alt="Main Screen"> | <img src="resources/screenshot-expanded.png" width="256" alt="Main Screen"> |
+| **Main Screen**                                                         | **Forecast**                                                                |
+| <img src="resources/screenshots/android/photo.png" width="256" alt="Main Screen"> | <img src="resources/screenshots/android/expanded.png" width="256" alt="Forecast"> |
 | **Radar**                                                               | **Pollen**                                                                  |
-| <img src="resources/screenshot-forecast.png" width="256" alt="Radar">   | <img src="resources/screenshot-pollen.png" width="256" alt="Pollen">        |
+| <img src="resources/screenshots/android/radar.png" width="256" alt="Radar">   | <img src="resources/screenshots/android/pollen.png" width="256" alt="Pollen">        |
 
 ---
 

@@ -1,75 +1,163 @@
-**Automated iPad Deployment Guide**
+# Wake an iPad every morning
 
-Configuring iOS Devices to Auto-Wake and Launch Your App Every Morning
+*Let the screen sleep overnight and have the dashboard back on the wall before you are.*
 
-**Overview:** Apple iOS enforces strict sandboxing rules that prevent apps from waking a screen natively via
+<img src="images/ipad-dashboard.jpg" width="720" alt="Weather Dashboard+ running full screen on a wall-mounted iPad">
 
-software. To achieve a hands-free morning wake cycle for your app, you must leverage hardware power
+iOS gives an app no way to turn the screen on. An app can ask the system to *keep* the display awake
+while it's in front — that's what Dashboard Mode does — but nothing in the sandbox can wake a display
+that has already gone to sleep, and no amount of clever code changes that.
 
-transitions combined with built-in Apple Shortcuts. This guide covers the **Smart Plug Power-Cycle**
+Hardware can. Plug an iPad into power and the screen lights up. So the whole trick is:
 
-**Method** and critical **Guided Access** optimizations to lock your app on screen.
+1. Put the iPad's charger on a **smart plug**.
+2. Cut power for a few minutes every morning, then turn it back on.
+3. Let a **Shortcuts automation** catch the moment power returns and open the dashboard.
 
-**1. Hardware & System Prerequisites**
+Total setup time is about ten minutes, and none of it needs a Mac, a jailbreak or an MDM profile.
 
-• **Smart Power Switch:** Any HomeKit, Home Assistant, Alexa, or standalone smart plug scheduled to cut
+---
 
-power briefly and turn back on every morning.
+## How the morning goes
 
-• **Power Adapter:** The iPad must remain physically connected to this smart plug via its charging cable.
+```mermaid
+flowchart LR
+    A["6:55 AM<br/>smart plug turns OFF"] --> B["iPad runs on battery<br/>screen still asleep"]
+    B --> C["7:00 AM<br/>smart plug turns ON"]
+    C --> D["charger connected<br/>iOS wakes the screen"]
+    D --> E["Shortcuts automation<br/>runs 'Open App'"]
+    E --> F["dashboard is on the wall<br/>and stays there all day"]
+```
 
-• **Passcode Removal (Required):** Navigate to *Settings > Face ID & Passcode* and completely disable
+---
 
-the device passcode. If a passcode is active, the screen will wake to a lock screen but will block your
+## What you'll need
 
-automation from launching the app.
+| | |
+| --- | --- |
+| **A smart plug** | Anything you can put on a daily schedule — Apple Home / HomeKit, Home Assistant, Alexa, SmartLife, Kasa. It doesn't have to be HomeKit; nothing here talks to it from the iPad. |
+| **The charging cable** | The iPad has to be powered *through* that plug. A battery-only mount won't work — there's no charger event to catch. |
+| **No passcode** | *Settings → Face ID & Passcode → Turn Passcode Off.* With a passcode set the iPad wakes to the Lock Screen and the automation can't open anything until someone unlocks it. |
+| **The Shortcuts app** | Built in. If it's been deleted, reinstall it free from the App Store. |
 
-• **Apple Shortcuts App:** Ensure the native Apple Shortcuts app is installed on the iPad.
+---
 
-**2. iPad Settings Optimization**
+## 1. Decide what the night should look like
 
-To ensure the iPad stays awake indefinitely after launching your app, configure the following settings:
+This is the step people skip, and then wonder why the smart plug never seems to do anything.
 
-• **Disable Auto-Lock:** Go to *Settings > Display & Brightness > Auto-Lock* and set it to **Never**.
+**Option A — the app runs the day (recommended).** In Weather Dashboard+, open
+*Settings → Dashboard Mode* and pick **Day / Night**: the screen stays on between the hours you set
+and sleeps outside them. Leave iOS **Auto-Lock** at whatever it is — while the app is holding the
+screen on, Auto-Lock doesn't apply. When the window ends at night the iPad goes dark on its own, and
+the smart plug is what brings it back in the morning.
 
-• **Guided Access (Recommended Alternative):** If you prefer to allow standard iOS auto-lock when the
+**Worth knowing before you buy a plug:** *Outside Hours* has three settings, and only one of them
+needs any of this.
 
-app is idle but want a bulletproof way to lock the user into your app, turn on Guided Access under
+| Outside Hours | What the iPad does at night | Needs a smart plug? |
+| --- | --- | --- |
+| **Screen Off** | Releases the display; iOS puts it to sleep | **Yes** — nothing can wake it in the morning |
+| **Blank Screen** | Holds the display but paints it black at 1% brightness | No — the panel lights itself back up on schedule |
+| **Screensaver** | Dimmed clock over your background | No — same, and it looks nicer in a hallway |
 
-*Settings > Accessibility > Guided Access*.
+Blank Screen is the closest thing to "off" that still comes back by itself. Pick **Screen Off** only
+if you want the display genuinely asleep — that's the case the smart plug solves.
 
-**3. Step-by-Step Configuration Flow**
+<img src="images/ipad-screensaver.jpg" width="480" alt="The dimmed screensaver clock shown outside the screen-on hours">
 
-**Step A: Configure the Smart Plug Schedule**
+**Option B — iOS keeps the screen on 24/7.** *Settings → Display & Brightness → Auto-Lock → Never.*
+The display simply never sleeps. This works, but it makes the rest of this page pointless: nothing
+ever needs waking. Only use it if you want the panel lit around the clock.
 
-Using your smart plug's native app (e.g., Apple Home, SmartLife, Home Assistant), set a daily recurring
+> The rest of this guide assumes **Option A with Screen Off at night** — that's the setup the smart
+> plug exists for.
 
-morning rule:
+---
 
-1. **Time:** Choose your desired wake time (e.g., 6:55 AM).
+## 2. Schedule the smart plug
 
-2. **Action 1:** Turn the Smart Plug **OFF**.
+In your plug's own app (Apple Home, Home Assistant, SmartLife, Alexa — whichever it came with),
+create one daily repeating rule:
 
-3. **Action 2:** Turn the Smart Plug **ON** exactly 5 minutes later (e.g., 7:00 AM). The physical reintroduction
+| Time | Action |
+| --- | --- |
+| 6:55 AM | Turn the plug **off** |
+| 7:00 AM | Turn the plug **on** |
 
-of power forces the iPad screen to instantly light up.**Step B: Build the Apple Shortcuts Automation**
+Pick whatever wake time suits you; the five-minute gap is the part that matters. iOS needs to see a
+real disconnect before it will register a fresh connect, and a gap that short costs the battery
+almost nothing.
 
-On the deployment iPad, build a localized macro that intercepts the power event:
+---
 
-1. Launch the **Shortcuts App** and tap the center **Automation** tab.
+## 3. Build the Shortcuts automation
 
-2. Tap the **+** icon (or 'Create Personal Automation') to create a new macro.
+On the iPad itself — automations are per-device and don't sync from your phone:
 
-3. Scroll down the list of triggers and select **Charger**.
+1. Open **Shortcuts** and tap the **Automation** tab at the bottom.
+2. Tap **+** in the top corner (or **Create Personal Automation** if this is the first one).
+3. Scroll the trigger list and choose **Charger**.
+4. Tick **Is Connected**, choose **Run Immediately** — *not* "Ask Before Running" — and tap **Next**.
+5. Tap **New Blank Automation**, then **Add Action**.
+6. Search for **Open App**, tap it, then tap the blue *App* placeholder and pick **Weather Dashboard+**.
+7. Turn **Notify When Run** off so the launch is silent, and tap **Done**.
 
-4. Check the box for **Is Connected** and choose **Run Immediately** (do not select 'Ask Before Running').
+Test it without waiting for the morning: unplug the cable, count to ten, plug it back in. The screen
+should light up and land on the dashboard.
 
-Tap Next.
+📺 [How to Trigger a Charger Connected Automation](https://www.youtube.com/watch?v=7Sam4X6viCM) — the
+same flow, on video, if you'd rather watch someone do it.
 
-5. Tap **New Blank Automation**, then select **Add Action**.
+---
 
-6. Search for the **Open App** action, tap it, and click the blue 'App' placeholder to select your app from the
+## 4. Lock the iPad to the app (optional)
 
-list.
+If the panel is somewhere guests or kids can reach it, **Guided Access** pins the iPad to one app
+until you triple-click your way out of it.
 
-7. Verify that 'Notify When Run' is disabled to ensure a seamless, quiet launch. Tap Done.
+1. *Settings → Accessibility → Guided Access* → turn it **on**, and set a **Passcode Settings**
+   passcode (this one is separate from the device passcode you removed — it's fine to have).
+2. Open Weather Dashboard+ and triple-click the top button (or Home button) → **Start**.
+3. Under **Session Settings** you can also disable **Motion** so the panel can't rotate.
+
+One catch worth knowing: a Guided Access session does *not* survive a reboot. If the iPad ever
+restarts — an update, a power blip long enough to drain it — you'll need to start the session again
+by hand.
+
+📺 [How to Set up Kiosk Mode on an iPad](https://www.youtube.com/watch?v=xmWunvURhbY)
+
+---
+
+## Troubleshooting
+
+| Symptom | Usually means |
+| --- | --- |
+| Screen wakes, but shows the Lock Screen | The device passcode is still on. Turn it off. |
+| Nothing happens when power returns | The automation is set to "Ask Before Running", or it got disabled. Open *Shortcuts → Automation*, tap it, and check. |
+| It fires, but the wrong app opens | Another Charger automation is already there — you can only usefully have one. |
+| Screen goes dark mid-morning | Dashboard Mode isn't set to Day / Night, or your screen-on window starts later than you think. |
+| Works for a week, then stops | Check the plug schedule survived a firmware update, and that the cable still charges — a dead battery means no automation at all. |
+
+**On battery health:** an iPad parked at 100% on a charger all day is not ideal, but it's what every
+wall-mounted panel does, and iOS's own Optimized Battery Charging helps. The five-minute daily
+outage is far too short to matter either way.
+
+---
+
+## Further reading
+
+Apple's own documentation, all with screenshots:
+
+- [Create a new personal automation in Shortcuts](https://support.apple.com/guide/shortcuts/create-a-new-personal-automation-apdfbdbd7123/ios)
+- [Setting triggers in Shortcuts](https://support.apple.com/guide/shortcuts/setting-triggers-apde31e9638b/ios) — what the Charger trigger actually fires on
+- [Enable or disable a personal automation](https://support.apple.com/guide/shortcuts/enable-or-disable-a-personal-automation-apd602971e63/ios)
+- [Set a passcode on iPad](https://support.apple.com/guide/ipad/set-a-passcode-ipad997daf9f/ipados) — and how to turn one off
+- [Keep the iPad display on longer](https://support.apple.com/guide/ipad/keep-the-ipad-display-on-longer-ipad11dbabaf/ipados) — the Auto-Lock setting
+- [Lock iPad to one app with Guided Access](https://support.apple.com/guide/ipad/lock-ipad-to-one-app-ipada16d1374/ipados)
+- [Wake, unlock, and lock iPad](https://support.apple.com/guide/ipad/wake-unlock-and-lock-ipad9940ee8d/ipados)
+
+And from people running the same setup:
+
+- [Wall-mount tablet charger smart plug automation](https://community.home-assistant.io/t/wallmount-tablet-charger-smart-plug-automation-or-template/292370) — Home Assistant community thread
+- [iPad Wall Mount — 1 Year Later: tips, tricks, best practices](https://www.youtube.com/watch?v=NMZIgCG6nVE)

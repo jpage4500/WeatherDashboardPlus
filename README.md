@@ -16,7 +16,7 @@
 
 <br>
 
-<img src="resources/screenshots/android-land/main.png" width="900" alt="Weather Dashboard+ full-screen conditions view">
+<img src="resources/screenshots/android-land/main.jpg" width="900" alt="Weather Dashboard+ full-screen conditions view">
 
 </div>
 
@@ -71,9 +71,9 @@ I had some requirements and a wish list:
 |                                                                         |                                                                             |
 | ----------------------------------------------------------------------- | --------------------------------------------------------------------------- |
 | **Main Screen**                                                         | **Forecast**                                                                |
-| <img src="resources/screenshots/android/photo.png" width="256" alt="Main Screen"> | <img src="resources/screenshots/android/expanded.png" width="256" alt="Forecast"> |
+| <img src="resources/screenshots/android/photo.jpg" width="256" alt="Main Screen"> | <img src="resources/screenshots/android/expanded.jpg" width="256" alt="Forecast"> |
 | **Radar**                                                               | **Pollen**                                                                  |
-| <img src="resources/screenshots/android/radar.png" width="256" alt="Radar">   | <img src="resources/screenshots/android/pollen.png" width="256" alt="Pollen">        |
+| <img src="resources/screenshots/android/radar.jpg" width="256" alt="Radar">   | <img src="resources/screenshots/android/pollen.jpg" width="256" alt="Pollen">        |
 
 ---
 

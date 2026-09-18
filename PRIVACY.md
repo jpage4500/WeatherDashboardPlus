@@ -114,5 +114,4 @@ account system and collects no personal information from anyone.
 
 ## Contact
 
-Questions, or a deletion request: **joe.page.software@gmail.com**, or open an issue at
-[github.com/jpage4500/WeatherDashboardPlus](https://github.com/jpage4500/WeatherDashboardPlus/issues).
+Questions, or a deletion request: **joe.page.software@gmail.com**, or send an issue/question through the app

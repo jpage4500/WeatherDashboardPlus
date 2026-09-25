@@ -6,17 +6,17 @@
 
 **A full-screen weather app designed for wall mounted tablets**
 
-[![Download](https://img.shields.io/badge/Download-latest%20release-0A6CFF?style=for-the-badge)](https://github.com/jpage4500/WeatherDashboardPlus/releases/latest)
-&nbsp;
+![iOS](https://img.shields.io/badge/iOS-000?style=for-the-badge&logo=apple&logoColor=white)
+![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
+
 ![macOS](https://img.shields.io/badge/macOS-000?style=for-the-badge&logo=apple&logoColor=white)
 ![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
-![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
-![iOS](https://img.shields.io/badge/iOS-000?style=for-the-badge&logo=apple&logoColor=white)
 
+<h1><a href="#install-section">Install</a></h1>
 <br>
 
-<img src="resources/screenshots/android-land/main.jpg" width="900" alt="Weather Dashboard+ full-screen conditions view">
+<img src="resources/screenshots/ios-ipad-land/expanded.jpg" alt="Weather Dashboard+ full-screen conditions view">
 
 </div>
 
@@ -38,7 +38,7 @@ I had some requirements and a wish list:
 ## Basic Features
 
 |                           |                                                                                                                |
-|---------------------------| -------------------------------------------------------------------------------------------------------------- |
+|---------------------------|----------------------------------------------------------------------------------------------------------------|
 | **Beautiful Backgrounds** | Displays beautiful, full-screen backgrounds that change based on the current weather conditions.               |
 | **Large Current Temp**    | In collapsed view you just get the full screen background and a large temp. simple and looks great on the wall |
 | **Hourly Forecast**       | A full day of hourly temperatures with chance of precipitation                                                 |
@@ -53,7 +53,7 @@ I had some requirements and a wish list:
 ## Advanced Features
 
 |                                 |                                                                                                                                                                                                                                                                                      |
-| ------------------------------- |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|---------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Multiple locations**          | Add current location or search by city; swipe between locations                                                                                                                                                                                                                      |
 | **Full Screen**                 | Use the entire screen - no system status bars taking up space                                                                                                                                                                                                                        |
 | **Keep Screen ON**              | Option to keep screen ON during the day (configurable) - essential for a wall mounted tablet                                                                                                                                                                                         |
@@ -62,69 +62,44 @@ I had some requirements and a wish list:
 | **Configurable Weather Source** | Select from Open-Meteo weather source (default - no API key needed), Visual Crossing (API key), OpenWeatherMap (API key)                                                                                                                                                             |
 | **Configurable Pollen Source**  | Select from pollen.com, Open-Meteo or Google Pollen (API key)                                                                                                                                                                                                                        |
 | **Reorder Sections**            | Re-order the various weather sections to fit your needs                                                                                                                                                                                                                              |
-| **Custom Photos**            | Use your own photos as backgrounds for the weather or as a screensaver                                                                                                                                                                                                                             |
+| **Custom Photos**               | Use your own photos as backgrounds for the weather or as a screensaver                                                                                                                                                                                                               |
 
 ---
 
 ## Screenshots
 
-|                                                                         |                                                                             |
-| ----------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| **Main Screen**                                                         | **Forecast**                                                                |
-| <img src="resources/screenshots/android/photo.jpg" width="256" alt="Main Screen"> | <img src="resources/screenshots/android/expanded.jpg" width="256" alt="Forecast"> |
-| **Radar**                                                               | **Pollen**                                                                  |
-| <img src="resources/screenshots/android/radar.jpg" width="256" alt="Radar">   | <img src="resources/screenshots/android/pollen.jpg" width="256" alt="Pollen">        |
+|                                                                             |                                                                              |
+|-----------------------------------------------------------------------------|------------------------------------------------------------------------------|
+| **Main Screen**                                                             | **Forecast**                                                                 |
+| <img src="resources/screenshots/ios-ipad-land/main.jpg"  alt="Main Screen"> | <img src="resources/screenshots/ios-ipad-land/expanded.jpg"  alt="Forecast"> |
+| **Radar**                                                                   | **Pollen**                                                                   |
+| <img src="resources/screenshots/android-land/radar.jpg"  alt="Radar">       | <img src="resources/screenshots/android-land/screensaver.jpg"  alt="Pollen"> |
+
+|                                                                       |                                                                       |
+|-----------------------------------------------------------------------|-----------------------------------------------------------------------|
+| <img src="resources/screenshots/android/photo.jpg" alt="Main Screen"> | <img src="resources/screenshots/android/expanded.jpg" alt="Forecast"> |
+| <img src="resources/screenshots/android/radar.jpg" alt="Radar">       | <img src="resources/screenshots/android/pollen.jpg"  alt="Pollen">    |
 
 ---
 
+<a id="install-section"></a>
+
 ## Install
 
-**[latest release](https://github.com/jpage4500/WeatherDashboardPlus/releases/latest)**. The desktop app auto-updates itself when a new version comes out.
+<h2>iOS</h2>
 
-<details>
-<summary><b>macOS</b></summary>
+- [App Store](https://apps.apple.com/us/app/weather-dashboard/id6806446844)
+- For early access, you can also install the [TestFlight](https://testflight.apple.com/join/UXvEWcye) version
 
-Download the macOS build for your chip (Apple Silicon or Intel), open it, and drag **Weather Dashboard+**
-to Applications.
+<h2>Android</h2>
 
-</details>
+- [Google Play](https://play.google.com/store/apps/details?id=com.jpage4500.weather)
+- For early access, you can also install the [Beta version](https://play.google.com/apps/testing/com.jpage4500.weather)
 
-<details>
-<summary><b>Windows</b></summary>
+<h2>Desktop (Mac/Windows/Linux)</h2>
 
-Download the Windows build and run it. SmartScreen may warn about an unrecognized publisher — choose **More info → Run anyway**.
-
-</details>
-
-<details>
-<summary><b>Linux</b></summary>
-
-Download the Linux build for your architecture (x64 or arm64) and run the launcher. Depending on your distribution you may need to mark it executable first:
-
-```bash
-chmod +x <downloaded-file>
-```
-
-</details>
-
-<details>
-<summary><b>Android</b></summary>
-
-**[Get it on Google Play](https://play.google.com/store/apps/details?id=com.jpage4500.weather)**
-
-- The app is in **open testing** — anyone can install it, no invite needed
-- [Join the open test](https://play.google.com/apps/testing/com.jpage4500.weather) to keep getting new versions as they're built
-
-</details>
-
-<details>
-<summary><b>iOS</b></summary>
-
-Download on the App Store (coming soon) 
-
-— Install the TestFlight version for early access
-
-</details>
+- [GitHub release page](https://github.com/jpage4500/WeatherDashboardPlus/releases/latest)
+    - NOTE: the desktop app auto-updates itself when a new version comes out
 
 ---
 

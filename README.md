@@ -53,17 +53,16 @@ Several of the weather sources requires a free API key but everything will work 
 
 ## Screenshots
 
-|                                                                             |                                                                              |
-|-----------------------------------------------------------------------------|------------------------------------------------------------------------------|
-| **Main Screen**                                                             | **Forecast**                                                                 |
-| <img src="resources/screenshots/ios-ipad-land/main.jpg"  alt="Main Screen"> | <img src="resources/screenshots/ios-ipad-land/expanded.jpg"  alt="Forecast"> |
-| **Radar**                                                                   | **Pollen**                                                                   |
-| <img src="resources/screenshots/android-land/radar.jpg"  alt="Radar">       | <img src="resources/screenshots/android-land/screensaver.jpg"  alt="Pollen"> |
+### Tablet
 
-|                                                                       |                                                                       |
-|-----------------------------------------------------------------------|-----------------------------------------------------------------------|
-| <img src="resources/screenshots/android/photo.jpg" height="400" alt="Main Screen"> | <img src="resources/screenshots/android/expanded.jpg" height="400" alt="Forecast"> |
-| <img src="resources/screenshots/android/radar.jpg" height="400" alt="Radar">       | <img src="resources/screenshots/android/pollen.jpg" height="400" alt="Pollen">    |
+<img src="resources/screenshots/ios-ipad-land/main.jpg" width="500" alt="Main Screen"> <img src="resources/screenshots/ios-ipad-land/expanded.jpg" width="500" alt="Forecast">
+<br>
+<img src="resources/screenshots/android-land/radar.jpg" width="500" alt="Radar"> <img src="resources/screenshots/android-land/screensaver.jpg" width="500" alt="Pollen">
+
+### Phone
+
+<img src="resources/screenshots/android/photo.jpg" height="400" alt="Main Screen"> <img src="resources/screenshots/android/expanded.jpg" height="400" alt="Forecast">
+<img src="resources/screenshots/android/radar.jpg" height="400" alt="Radar"> <img src="resources/screenshots/android/pollen.jpg" height="400" alt="Pollen">
 
 ---
 

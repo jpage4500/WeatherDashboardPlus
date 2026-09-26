@@ -25,45 +25,31 @@
 
 There's a million weather apps out there, but I wanted one that was **designed** for a wall-mounted tablet.
 
-I had some requirements and a wish list:
+- **Native iOS / Android app** (desktop support too)
+- **Full screen weather app**: no system status bar, just the weather
+- **Rotating weather-specific backgrounds**
+- **Dashboard mode built-in**: full screen, keep the screen ON and OFF during certain hours - or keep it on with a screensaver and motion to wake (*)
+- **Swipe to change locations**
+- **Landscape Friendly UI**: Single or multiple columns
+- **Hourly Forecast**: A full day of hourly temperatures with chance of precipitation
+- **Daily Forecast**: Up to 10 days on lows/highs and chance of precipitation
+- **Future Radar**: Animated radar showing the next 3 hours of your current location
+- **Pollen Forecast**: The next 5 days pollen levels
+- **°F or °C**
 
-- It has to be **full screen** - take full advantage of the screen with no system status bar
-- It needs to keep the screen **on all day** and go **dark at night**
-- It needs to be **simple to use** and **readable from a distance**
-- And most importantly it needs to **look great** - this is a wall mounted tablet after all
+Customize the app with many options:
 
----
+- **Custom Photos**: Use your own photos as backgrounds for the weather or as a screensaver
+- **Reorder Sections**: Show or hide sections and reorder them to your liking
+- **Multiple weather icon sets built-in**
+- **Multiple weather data sources**: Open-Meteo, Visual Crossing (requires API key which is free), OpenWeatherMap (API key)
+- **Multiple radar sources**: NOAA or weather.com
+- **Multiple pollen sources**: pollen.com, Open-Meteo, Google Pollen (API key)
+- **Multiple background image sources**: Unsplash, Built-in, Select your own photos
 
-## Basic Features
+Several of the weather sources requires a free API key but everything will work out of the box with free sources. I added the other providers since these tend to be a little better but require the extra step of creating and entering it.
 
-|                           |                                                                                                                |
-|---------------------------|----------------------------------------------------------------------------------------------------------------|
-| **Beautiful Backgrounds** | Displays beautiful, full-screen backgrounds that change based on the current weather conditions.               |
-| **Large Current Temp**    | In collapsed view you just get the full screen background and a large temp. simple and looks great on the wall |
-| **Hourly Forecast**       | A full day of hourly temperatures with chance of precipitation                                                 |
-| **Daily Forecast**        | Up to 10 days on lows/highs and chance of precipitation                                                        |
-| **Future Radar**          | Animated radar showing the next 3 hours of your current location                                               |
-| **Full Screen Radar**     | View a full screen map you can pan and zoom, with play/pause and a slider to scrub through the next few hours  |
-| **Pollen Forecast**       | The next 5 days pollen levels                                                                                  |
-| **Weather Details**       | Additional details about the current weather                                                                   |
-| **°F or °C**              | One switch in Settings; wind, pressure and visibility follow it                                                |
-| **Refresh**               | Automatically on a schedule you pick (10 minutes by default), by pulling down, or by tapping the location name |
-
-## Advanced Features
-
-|                                 |                                                                                                                                                                                                                                                                                      |
-|---------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Multiple locations**          | Add current location or search by city; swipe between locations                                                                                                                                                                                                                      |
-| **Full Screen**                 | Use the entire screen - no system status bars taking up space                                                                                                                                                                                                                        |
-| **Keep Screen ON**              | Option to keep screen ON during the day (configurable) - essential for a wall mounted tablet                                                                                                                                                                                         |
-| **Screensaver**                 | During the night you can enable a screen saver which will dim the screen and can be woken by tap or front camera motion. Or, just have the app let the screen turn off - and use a smart plug to turn it on again in the morning (see [this page](docs/public/ios-wake.md) for help) |
-| **Multiple weather icon sets**  | Select from 4 sets of weather icons to find the one that you like the best                                                                                                                                                                                                           |
-| **Configurable Weather Source** | Select from Open-Meteo weather source (default - no API key needed), Visual Crossing (API key), OpenWeatherMap (API key)                                                                                                                                                             |
-| **Configurable Pollen Source**  | Select from pollen.com, Open-Meteo or Google Pollen (API key)                                                                                                                                                                                                                        |
-| **Reorder Sections**            | Re-order the various weather sections to fit your needs                                                                                                                                                                                                                              |
-| **Custom Photos**               | Use your own photos as backgrounds for the weather or as a screensaver                                                                                                                                                                                                               |
-
----
+(*) The app is **free & no ads**. I do have a single in-app purchase of $2.99 if you want to enable the built-in dashboard mode (turn screen ON and OFF automatically) and add more than 2 locations. I've never charged for an app in the past but wanted to test it out.. I'm not expecting to make any money but if it can help pay for an AI subscription that's all I'm looking for.
 
 ## Screenshots
 
@@ -76,8 +62,8 @@ I had some requirements and a wish list:
 
 |                                                                       |                                                                       |
 |-----------------------------------------------------------------------|-----------------------------------------------------------------------|
-| <img src="resources/screenshots/android/photo.jpg" alt="Main Screen"> | <img src="resources/screenshots/android/expanded.jpg" alt="Forecast"> |
-| <img src="resources/screenshots/android/radar.jpg" alt="Radar">       | <img src="resources/screenshots/android/pollen.jpg"  alt="Pollen">    |
+| <img src="resources/screenshots/android/photo.jpg" height="400" alt="Main Screen"> | <img src="resources/screenshots/android/expanded.jpg" height="400" alt="Forecast"> |
+| <img src="resources/screenshots/android/radar.jpg" height="400" alt="Radar">       | <img src="resources/screenshots/android/pollen.jpg" height="400" alt="Pollen">    |
 
 ---
 
